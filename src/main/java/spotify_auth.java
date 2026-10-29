@@ -1,4 +1,4 @@
-/*
+/* 
     Authenticate users spotify account
     Matthew Madden
 
@@ -21,11 +21,6 @@
 
 
 
-import com.sun.net.httpserver.HttpServer;
-import se.michaelthelin.spotify.SpotifyApi;
-import se.michaelthelin.spotify.SpotifyHttpManager;
-import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCredentials;
-
 import java.awt.Desktop;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -37,6 +32,12 @@ import java.security.SecureRandom;
 import java.util.Base64;
 import java.util.Properties;
 import java.util.concurrent.CompletableFuture;
+
+import com.sun.net.httpserver.HttpServer;
+
+import se.michaelthelin.spotify.SpotifyApi;
+import se.michaelthelin.spotify.SpotifyHttpManager;
+import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCredentials;
 
 
 public class spotify_auth {
@@ -53,6 +54,13 @@ public class spotify_auth {
         return props.getProperty("spotify.client.id");
     }
 
+    /**
+    * Links the users spotify account 
+    * 
+    * @return SpotifyApi
+    * 
+    * contains access token and refresh token
+    */
     public static SpotifyApi link() throws Exception {
         // PKCE verifier + challenge
         byte[] rnd = new byte[64];
