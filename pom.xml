@@ -39,7 +39,7 @@
         <artifactId>javafx-maven-plugin</artifactId>
         <version>0.0.8</version>
         <configuration>
-          <mainClass>PrototypeApp</mainClass>
+          <mainClass>user_login</mainClass>
         </configuration>
       </plugin>
       <plugin>
