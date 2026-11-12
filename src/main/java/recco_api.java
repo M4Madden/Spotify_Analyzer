@@ -35,8 +35,6 @@ public class recco_api {
     private static final String BASE_URL = "https://api.reccobeats.com/v1";
     private static final HttpClient client = HttpClient.newHttpClient();
 
-    
-
     /**
      * Converts spotify ids to recco ids
      * 
