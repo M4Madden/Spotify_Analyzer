@@ -1,0 +1,30 @@
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE users (
+                       user_ID  INTEGER PRIMARY KEY,
+                       username CHAR NOT NULL,
+                       password CHAR NOT NULL,
+                       a_token      CHAR NOT NULL
+                       r_token      CHAR NOT NULL
+);
+
+CREATE TABLE playlists (
+                           playlist_ID INTEGER PRIMARY KEY,
+                           name        CHAR NOT NULL,
+                           time        INT NOT NULL
+);
+
+CREATE TABLE matrix (
+                        matrix_ID    INTEGER PRIMARY KEY,
+                        danceability INTEGER NOT NULL,
+                        tempo        INTEGER NOT NULL,
+                        song_key     INTEGER NOT NULL
+);
+
+CREATE TABLE recommended (
+                             recommended_ID INTEGER PRIMARY KEY,
+                             song_name      CHAR NOT NULL,
+                             genre          CHAR NOT NULL,
+                             artist         CHAR NOT NULL,
+                             status         BIT NOT NULL
+);
