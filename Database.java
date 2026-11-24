@@ -1,13 +1,13 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.SQLExeption;
 import java.sql.Statement;
 
 public class Database {
-    private static String url = "jdbc:sqlite:spotify_analyzer.db";
+    private static Stirng url = "jdbc:sqlite:spotify_analyzer.db";
 
     public static void setPath(String path) {
-        url = "jdbc:sqlite:" + path;
+        url = "jdbc:sqlite" + path;
     }
 
     public static Connection connect() throws SQLException {
@@ -27,8 +27,8 @@ public class Database {
             username TEXT NOT NULL UNIQUE,
             password TEXT NOT NULL,
             a_token TEXT,
-            r_token TEXT,
-            token_expires INTEGER
+            r_toke TEXT,
+            token_expires INTEGER,
             )""");
 
             s.execute("""
@@ -50,7 +50,7 @@ public class Database {
 
             s.execute("""
             CREATE TABLE IF NOT EXISTS recommended (
-            recommended_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+            recommended_ID INTEGER PRIMARY KEY AUTOINCREMENT
             user_ID INTEGER NOT NULL REFERENCES users(user_ID) ON DELETE CASCADE,
             song_name TEXT NOT NULL,
             genre TEXT,

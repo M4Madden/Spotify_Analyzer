@@ -36,11 +36,16 @@ public class DbTest {
         check("login good password", User_connection.login("cam", "pass123") == id);
         check("login wrong password", User_connection.login("cam", "nope") == -1);
         check("login unknown user", User_connection.login("ghost", "pass123") == -1);
+        try (Connection c = Database.connect(); Statement s = c.createStatement();
+             ResultSet rs = s.executeQuery("SELECT password FROM users WHERE user_ID=" + id)) {
+            rs.next();
+            check("password not stored as plaintext", !rs.getString(1).contains("pass123"));
+        }
 
         // --- tokens ---
         check("no tokens before linking", User_connection.getTokens(id) == null);
         User_connection.saveTokens(id, "ACCESS1", "REFRESH1", 3600);
-        User_connection.Tokens t = User_connection.getTokens(id);
+        User_connection.Tokens t = UserDao.getTokens(id);
         check("tokens saved", t != null && t.access().equals("ACCESS1") && t.refresh().equals("REFRESH1"));
         check("expiry is in the future", t.expiresAtEpoch() > System.currentTimeMillis() / 1000);
 

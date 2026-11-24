@@ -54,15 +54,8 @@ public class spotify_auth {
         return props.getProperty("spotify.client.id");
     }
 
-    public static SpotifyApi newApi() {
-        return new SpotifyApi.Builder()
-            .setClientId(CLIENT_ID)
-            .setRedirectUri(REDIRECT)
-            .build();
-    }
-
     /**
-    * Links the users spotify account
+    * Links the users spotify account 
     * 
     * @return SpotifyApi
     * 
@@ -80,6 +73,13 @@ public class spotify_auth {
             .setClientId(CLIENT_ID)
             .setRedirectUri(REDIRECT)
             .build();
+
+        public static SpotifyApi newApi() {
+            return new SpotifyApi.Builder()
+            .setClientId(CLIENT_ID)
+            .setRedirectUri(REDIRECT)
+            .build()
+        }
 
         // Start local server to catch the redirect
         CompletableFuture<String> codeFuture = new CompletableFuture<>();
