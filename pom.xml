@@ -14,23 +14,23 @@
     <javafx.version>21.0.5</javafx.version>
   </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>se.michaelthelin.spotify</groupId>
-      <artifactId>spotify-web-api-java</artifactId>
-      <version>8.4.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-controls</artifactId>
-      <version>${javafx.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-fxml</artifactId>
-      <version>26</version>
-    </dependency>
-  </dependencies>
+<dependencies>
+  <dependency>
+    <groupId>se.michaelthelin.spotify</groupId>
+    <artifactId>spotify-web-api-java</artifactId>
+    <version>8.4.1</version>
+  </dependency>
+  <dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-controls</artifactId>
+    <version>${javafx.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-fxml</artifactId>
+    <version>${javafx.version}</version>
+  </dependency>
+</dependencies>
 
   <build>
     <plugins>

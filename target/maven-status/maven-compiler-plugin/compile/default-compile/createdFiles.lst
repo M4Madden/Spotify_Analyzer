@@ -1,0 +1,11 @@
+spotify_auth.class
+recco_api.class
+PlaylistItem.class
+SpotifyDataService.class
+App.class
+TrackItem.class
+MainController.class
+RegisterController.class
+MainController$TrackItem.class
+SpotifyApiHandler.class
+LoginController.class

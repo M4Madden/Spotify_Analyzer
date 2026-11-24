@@ -1,10 +1,10 @@
+import java.util.ArrayList;
+import java.util.List;
+
 import se.michaelthelin.spotify.SpotifyApi;
 import se.michaelthelin.spotify.model_objects.specification.Paging;
 import se.michaelthelin.spotify.model_objects.specification.PlaylistSimplified;
 import se.michaelthelin.spotify.model_objects.specification.User;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class SpotifyDataService {
 
@@ -41,4 +41,16 @@ public class SpotifyDataService {
         }
         return playlistNames;
     }
+    /*
+    //spotifyApi.getaccesstokens()
+    public List<String> getUserPlaylistItems(){
+        List<String> songNames = new ArrayList<>();
+        try {
+            Paging<PlaylistSimplified> songPaging = spotifyApi.getPlaylistsItems(playlist_id);
+        } catch (Exception e) {
+
+        }
+
+    }
+    */
 }
